@@ -11,17 +11,22 @@
 
 <section class="detail-section">
     <ng-container *ngFor="let okr of displayOKRList">
-        <details
-            [ngClass]="{ highlight: okr.title === title }"
-            (click)="openList(title)"
-        >
+        <details>
             <summary>{{ okr.title }}</summary>
             <div class="list-main">
                 <ng-container *ngFor="let child of okr.childs">
-                    <div class="list-content">
-                        {{ child.id }} - {{ child.category }} -
-                        {{ child.title }}
-                    </div>
+                    <details class="list-content">
+                        <summary>{{ child.title }}</summary>
+                        <div class="child-info">
+                            <div>
+                                Parent Id: {{ child.parent_objective_id }}
+                            </div>
+                            <div>Category: {{ child.category }}</div>
+                            <div>Metric Name: {{ child.metric_name }}</div>
+                            <div>Metric Start: {{ child.metric_start }}</div>
+                            <div>Metric Target: {{ child.metric_target }}</div>
+                        </div>
+                    </details>
                 </ng-container>
             </div>
         </details>

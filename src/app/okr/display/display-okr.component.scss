@@ -37,10 +37,11 @@ section {
                     line-height: 18px;
                     padding: 5px 0;
                 }
-            }
-            &.highlight {
-                summary {
-                    background: $dark-green;
+                .child-info {
+                    margin-left: 50px;
+                    div {
+                        padding-bottom: 10px;
+                    }
                 }
             }
         }

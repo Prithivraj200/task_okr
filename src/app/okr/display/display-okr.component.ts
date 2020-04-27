@@ -10,14 +10,12 @@ import { filterCategories } from './../../shared/config/filter-categories';
     styleUrls: ['./display-okr.component.scss']
 })
 export class DisplayOkrComponent implements OnInit {
-    title: string;
     category: string;
     okrList: Array<Parent>;
     filters: Array<string>;
     displayOKRList: Array<Parent>;
 
     constructor(private okrService: OKRService) {
-        this.title = '';
         this.category = '';
         this.okrList = [];
         this.displayOKRList = [];
@@ -66,10 +64,6 @@ export class DisplayOkrComponent implements OnInit {
     appendChild(okr: OKR, parentList: object, okrs: Array<Parent>): void {
         const parentIndex = parentList[okr.parent_objective_id];
         okrs[parentIndex].childs.push(okr);
-    }
-
-    openList(title: string): void {
-        this.title = title;
     }
 
     filterOKRByCategory(category: string): void {

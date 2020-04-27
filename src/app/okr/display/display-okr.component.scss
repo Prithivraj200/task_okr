@@ -1,0 +1,48 @@
+@import '../../../assets/scss/variables';
+
+section {
+    &.btn-section {
+        button {
+            background: $blue;
+            color: $white;
+            cursor: pointer;
+            padding: 7px 20px;
+            border: 1px solid $light-blue;
+            border-right: 0;
+            &.highlight {
+                background: $highlight !important;
+            }
+            &:focus {
+                outline: none;
+            }
+        }
+    }
+    &.detail-section {
+        background: $highlight;
+        color: $white;
+        font-size: 16px;
+        details {
+            summary {
+                padding: 10px 10px 10px 10px;
+                cursor: pointer;
+                &:focus {
+                    outline: none;
+                    border: 0;
+                }
+            }
+            .list-main {
+                background: $dark-blue;
+                padding: 12px;
+                .list-content {
+                    line-height: 18px;
+                    padding: 5px 0;
+                }
+            }
+            &.highlight {
+                summary {
+                    background: $dark-green;
+                }
+            }
+        }
+    }
+}

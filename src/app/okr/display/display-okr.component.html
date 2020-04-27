@@ -1,0 +1,29 @@
+<section class="btn-section">
+    <ng-container *ngFor="let filter of filters">
+        <button
+            [ngClass]="{ highlight: category === filter }"
+            (click)="filterOKRByCategory(filter)"
+        >
+            {{ filter }}
+        </button>
+    </ng-container>
+</section>
+
+<section class="detail-section">
+    <ng-container *ngFor="let okr of displayOKRList">
+        <details
+            [ngClass]="{ highlight: okr.title === title }"
+            (click)="openList(title)"
+        >
+            <summary>{{ okr.title }}</summary>
+            <div class="list-main">
+                <ng-container *ngFor="let child of okr.childs">
+                    <div class="list-content">
+                        {{ child.id }} - {{ child.category }} -
+                        {{ child.title }}
+                    </div>
+                </ng-container>
+            </div>
+        </details>
+    </ng-container>
+</section>
